@@ -6,35 +6,35 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
-    // Island Class ++++++++++++++++++++++++++++++++++++++
-    var planet = (function (_super) {
-        __extends(planet, _super);
+    // planet Class ++++++++++++++++++++++++++++++++++++++
+    var point = (function (_super) {
+        __extends(point, _super);
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
-        function planet(imageString) {
+        function point(imageString) {
             _super.call(this, imageString);
-            this.name = "island";
+            this.name = "point";
             this.sound = "yay";
             this.dy = 5;
             this.reset();
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++++
-        planet.prototype.checkBounds = function () {
-            // check if island has left screen
-            if (this.x > 640 + this.height) {
+        point.prototype.checkBounds = function () {
+            // check if planet has left screen
+            if (this.y > 600 + this.height) {
                 this.reset();
             }
         };
-        planet.prototype.reset = function () {
-            this.y = Math.floor(Math.random() * 480); // start island at random location
-            this.x = -this.width; // start island off stage
+        point.prototype.reset = function () {
+            this.x = Math.floor(Math.random() * 400); // start planet at random location
+            this.y = -this.height; // start planet off stage
         };
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
-        planet.prototype.update = function () {
-            this.x += this.dy; // moves island down the stage
+        point.prototype.update = function () {
+            this.y += this.dy; // moves island down the stage
             this.checkBounds();
         };
-        return planet;
+        return point;
     })(objects.GameObject);
-    objects.planet = planet;
+    objects.point = point;
 })(objects || (objects = {}));
 //# sourceMappingURL=planet.js.map

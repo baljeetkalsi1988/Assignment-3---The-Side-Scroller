@@ -9,7 +9,7 @@ var objects;
     var Label = (function (_super) {
         __extends(Label, _super);
         function Label(labelText, x, y, centered) {
-            _super.call(this, labelText, "20px" + " " + "Consolas", "#FFFFFF");
+            _super.call(this, labelText, "10px" + " " + "Consolas", "#FFFFFF");
             if (centered) {
                 this.regX = this.getMeasuredWidth() * 0.5;
                 this.regY = this.getMeasuredHeight() * 0.5;

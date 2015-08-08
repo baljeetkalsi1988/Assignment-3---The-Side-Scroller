@@ -5,7 +5,7 @@
         }
 
         //PUBLIC METHODS ++++++++++++++++++++++++
-        // check the distance between plane and any other game object
+        // check the distance between car and any other game object
         public check(gameObject: objects.GameObject) {
         var p1: createjs.Point = new createjs.Point();
         var p2: createjs.Point = new createjs.Point();
@@ -23,7 +23,7 @@
                 if (gameObject.name == "cloud") {
                     scoreboard.lives--;
 
-                    if (scoreboard.lives < 0)
+                    if (scoreboard.lives < 1)
                     {
                         currentState = constants.GAME_OVER_STATE;
                         gameover.gameend();

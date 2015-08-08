@@ -5,28 +5,25 @@ var states;
             this.main();
         }
         Play.prototype.update = function () {
-            galaxy.update();
+            rtrack.update();
             plane.update();
-            planet.update();
-            var ran = Math.floor(Math.random() * 10);
-            if (ran < 4) {
-                fuel.update();
-                collision.check(fuel);
-            }
+            point.update();
+            fuel.update();
+            collision.check(fuel);
             for (var attacker = 0; attacker < 5; attacker++) {
-                spaceship[attacker].update();
-                collision.check(spaceship[attacker]);
+                comcar[attacker].update();
+                collision.check(comcar[attacker]);
             }
-            collision.check(planet);
+            collision.check(point);
             scoreboard.update();
         };
         Play.prototype.main = function () {
             //add ocean object to stage
-            galaxy = new objects.galaxy(assets.getResult("ocean"));
-            game.addChild(galaxy);
+            rtrack = new objects.rtrack(assets.getResult("rtrack"));
+            game.addChild(rtrack);
             //add island object to stage
-            planet = new objects.planet(assets.getResult("island"));
-            game.addChild(planet);
+            point = new objects.point(assets.getResult("point"));
+            game.addChild(point);
             fuel = new objects.fuel(assets.getResult("fuel"));
             game.addChild(fuel);
             // add plane object to stage
@@ -34,8 +31,8 @@ var states;
             game.addChild(plane);
             // add 3 cloud objects to stage
             for (var cloud = 0; cloud < 5; cloud++) {
-                spaceship[cloud] = new objects.spaceship(assets.getResult("cloud"));
-                game.addChild(spaceship[cloud]);
+                comcar[cloud] = new objects.comcar(assets.getResult("comcar"));
+                game.addChild(comcar[cloud]);
             }
             //add scoreboard
             scoreboard = new objects.ScoreBoard();

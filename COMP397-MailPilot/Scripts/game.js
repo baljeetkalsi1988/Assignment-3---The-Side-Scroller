@@ -8,10 +8,10 @@
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/fuel.ts" />
-/// <reference path="objects/galaxy.ts" />
+/// <reference path="objects/rtrack.ts" />
 /// <reference path="objects/plane.ts" />
-/// <reference path="objects/planet.ts" />
-/// <reference path="objects/spaceship.ts" />
+/// <reference path="objects/point.ts" />
+/// <reference path="objects/comcar.ts" />
 /// <reference path="managers/collision.ts" />
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="states/menu.ts" />
@@ -29,23 +29,23 @@ var gameover;
 var menuLabel;
 var endLabel;
 var manifest = [
-    { id: "ocean", src: "assets/images/ocean.gif" },
+    { id: "rtrack", src: "assets/images/rtrack.gif" },
     { id: "plane", src: "assets/images/plane.png" },
     { id: "mm", src: "assets/images/mm.png" },
     { id: "sg", src: "assets/images/sg.png" },
-    { id: "island", src: "assets/images/island.png" },
+    { id: "point", src: "assets/images/point.png" },
     { id: "fuel", src: "assets/images/fuel.png" },
-    { id: "cloud", src: "assets/images/cloud.png" },
+    { id: "comcar", src: "assets/images/comcar.png" },
     { id: "yay", src: "assets/audio/yay.ogg" },
     { id: "thunder", src: "assets/audio/thunder.ogg" },
     { id: "engine", src: "assets/audio/engine.ogg" }
 ];
 // Game Variables
-var galaxy;
+var rtrack;
 var plane;
-var planet;
+var point;
 var fuel;
-var spaceship = [];
+var comcar = [];
 var scoreboard;
 // Game Managers
 var collision;

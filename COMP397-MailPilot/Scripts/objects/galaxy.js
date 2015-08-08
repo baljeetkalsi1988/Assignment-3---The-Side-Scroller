@@ -7,10 +7,10 @@ var __extends = this.__extends || function (d, b) {
 var objects;
 (function (objects) {
     // galaxy Class ++++++++++++++++++++++++++++++++++++++
-    var galaxy = (function (_super) {
-        __extends(galaxy, _super);
+    var rtrack = (function (_super) {
+        __extends(rtrack, _super);
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
-        function galaxy(imageString) {
+        function rtrack(imageString) {
             _super.call(this, imageString);
             this.dy = 5;
             this.width = this.getBounds().width;
@@ -18,23 +18,23 @@ var objects;
             this.reset();
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++++
-        galaxy.prototype.checkBounds = function () {
+        rtrack.prototype.checkBounds = function () {
             // check if galaxy has left screen
-            if (this.x == 0) {
+            if (this.y == 0) {
                 this.reset();
             }
         };
-        galaxy.prototype.reset = function () {
-            this.y = 0;
-            this.x = -1280; // reset galaxy off screen
+        rtrack.prototype.reset = function () {
+            this.x = 0;
+            this.y = -200; // reset galaxy off screen
         };
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
-        galaxy.prototype.update = function () {
-            this.x += this.dy; // moves galaxy down the stage
+        rtrack.prototype.update = function () {
+            this.y += this.dy; // moves galaxy down the stage
             this.checkBounds();
         };
-        return galaxy;
+        return rtrack;
     })(createjs.Bitmap);
-    objects.galaxy = galaxy;
+    objects.rtrack = rtrack;
 })(objects || (objects = {}));
 //# sourceMappingURL=galaxy.js.map

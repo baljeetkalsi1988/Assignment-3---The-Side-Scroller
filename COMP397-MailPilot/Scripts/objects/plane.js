@@ -13,12 +13,12 @@ var objects;
         function Plane(imageString) {
             _super.call(this, imageString);
             this.sound = "engine";
-            this.x = 580;
+            this.y = 320;
             createjs.Sound.play(this.sound, { "loop": -1 });
         }
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
         Plane.prototype.update = function () {
-            this.y = stage.mouseY; // position plane under mouse
+            this.x = stage.mouseX; // position car under mouse
         };
         return Plane;
     })(objects.GameObject);

@@ -12,12 +12,13 @@
 
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/fuel.ts" />
-/// <reference path="objects/galaxy.ts" />
 
+/// <reference path="objects/rtrack.ts" />
 
 /// <reference path="objects/plane.ts" />
-/// <reference path="objects/planet.ts" />
-/// <reference path="objects/spaceship.ts" />
+/// <reference path="objects/point.ts" />
+
+/// <reference path="objects/comcar.ts" />
 
 /// <reference path="managers/collision.ts" />
 
@@ -46,13 +47,13 @@ var endLabel: objects.Label;
 
 
 var manifest = [
-    { id: "ocean", src: "assets/images/ocean.gif" },
+    { id: "rtrack", src: "assets/images/rtrack.gif" },
     { id: "plane", src: "assets/images/plane.png" },
     { id: "mm", src: "assets/images/mm.png" },
     { id: "sg", src: "assets/images/sg.png" },
-    { id: "island", src: "assets/images/island.png" },
+    { id: "point", src: "assets/images/point.png" },
     { id: "fuel", src: "assets/images/fuel.png" },
-    { id: "cloud", src: "assets/images/cloud.png" },
+    { id: "comcar", src: "assets/images/comcar.png" },
     { id: "yay", src: "assets/audio/yay.ogg" },
     { id: "thunder", src: "assets/audio/thunder.ogg" },
     { id: "engine", src: "assets/audio/engine.ogg" }
@@ -60,11 +61,11 @@ var manifest = [
 
 
 // Game Variables
-var galaxy: objects.galaxy;
+var rtrack: objects.rtrack;
 var plane: objects.Plane;
-var planet: objects.planet;
+var point: objects.point;
 var fuel: objects.fuel;
-var spaceship: objects.spaceship[] = [];
+var comcar: objects.comcar[] = [];
 
 var scoreboard: objects.ScoreBoard;
 

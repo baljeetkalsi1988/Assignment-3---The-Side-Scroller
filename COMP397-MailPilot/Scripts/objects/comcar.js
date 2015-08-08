@@ -49,4 +49,4 @@ var objects;
     })(objects.GameObject);
     objects.comcar = comcar;
 })(objects || (objects = {}));
-//# sourceMappingURL=spaceship.js.map
+//# sourceMappingURL=comcar.js.map

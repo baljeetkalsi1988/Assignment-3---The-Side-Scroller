@@ -7,14 +7,14 @@
 
             this.sound = "engine";
 
-            this.x = 580;
+            this.y = 320;
 
             createjs.Sound.play(this.sound, {"loop": -1});
         }
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
         public update(): void {
-            this.y = stage.mouseY; // position plane under mouse
+            this.x= stage.mouseX; // position car under mouse
         }
     }
 } 

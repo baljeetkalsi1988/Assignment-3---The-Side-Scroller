@@ -1,6 +1,6 @@
 ﻿module objects {
     // galaxy Class ++++++++++++++++++++++++++++++++++++++
-    export class galaxy extends createjs.Bitmap {
+    export class rtrack extends createjs.Bitmap {
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++
         width: number;
         height: number;
@@ -19,22 +19,22 @@
         private checkBounds(): void {
 
             // check if galaxy has left screen
-            if (this.x == 0) {
+            if (this.y == 0) {
                 this.reset();
             }
         }
 
 
         private reset(): void {
-            this.y = 0;
-            this.x = -1280; // reset galaxy off screen
+            this.x = 0;
+            this.y = -200; // reset galaxy off screen
         }
 
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
         public update(): void {
 
-            this.x += this.dy; // moves galaxy down the stage
+            this.y += this.dy; // moves galaxy down the stage
             this.checkBounds();
         }
     }

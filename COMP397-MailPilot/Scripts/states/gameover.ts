@@ -7,8 +7,8 @@
             game.removeAllChildren();
             game.removeAllEventListeners();
 
-            galaxy = new objects.galaxy(assets.getResult("ocean"));
-            game.addChild(galaxy);
+            rtrack = new objects.rtrack(assets.getResult("rtrack"));
+            game.addChild(rtrack);
 
             endLabel = new objects.Label("Sorry You Lost!!!! ", 380, 100, true);
 

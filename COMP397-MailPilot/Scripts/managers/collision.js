@@ -5,7 +5,7 @@ var managers;
         function Collision() {
         }
         //PUBLIC METHODS ++++++++++++++++++++++++
-        // check the distance between plane and any other game object
+        // check the distance between car and any other game object
         Collision.prototype.check = function (gameObject) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
@@ -18,7 +18,7 @@ var managers;
                     createjs.Sound.play(gameObject.sound);
                     if (gameObject.name == "cloud") {
                         scoreboard.lives--;
-                        if (scoreboard.lives < 0) {
+                        if (scoreboard.lives < 1) {
                             currentState = constants.GAME_OVER_STATE;
                             gameover.gameend();
                         }

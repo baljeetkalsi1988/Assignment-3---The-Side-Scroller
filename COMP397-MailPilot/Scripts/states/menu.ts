@@ -10,17 +10,17 @@
             game.removeAllEventListeners();
            
            
-            galaxy = new objects.galaxy(assets.getResult("ocean"));
-            game.addChild(galaxy);
+            rtrack = new objects.rtrack(assets.getResult("rtrack"));
+            game.addChild(rtrack);
 
-            //add island object to stage
-            planet = new objects.planet(assets.getResult("island"));
-            game.addChild(planet);
+            //add planet object to stage
+            point = new objects.point(assets.getResult("point"));
+            game.addChild(point);
 
             // add plane object to stage
             plane = new objects.Plane(assets.getResult("plane"));
             game.addChild(plane);
-            menuLabel = new objects.Label("Universal War \n To Play \n Press Start", 475, 100, true); 
+            menuLabel = new objects.Label("Universal War \n To Play \n Press Start", 275, 100, true); 
 
             game.addChild(menuLabel);
 
@@ -29,7 +29,7 @@
             powerbutton = new createjs.Bitmap(assets.getResult("mm"));
             powerbutton.regX = powerbutton.getBounds().width * 0.5;
             powerbutton.regY = powerbutton.getBounds().height * 0.5;
-            powerbutton.x = 350;;
+            powerbutton.x = 275;
             powerbutton.y = 200;
             powerbutton.on("click", playButtonClicked, this);
             game.addChild(powerbutton);

@@ -1,5 +1,5 @@
 ﻿module objects {
-    // Island Class ++++++++++++++++++++++++++++++++++++++
+    // fuel Class ++++++++++++++++++++++++++++++++++++++
     export class fuel extends objects.GameObject {
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor(imageString: string) {
@@ -9,31 +9,33 @@
             this.sound = "yay";
             this.dy = 6;
 
-            this.reset();
+           // this.reset();
         }
 
         // PRIVATE METHODS ++++++++++++++++++++++++++++++
         private checkBounds(): void {
 
             // check if fuel has left screen
-            if (this.x > 640 + this.height) {
-                this.reset();
+            if (this.y > 600 + this.height) {
+               
+                 this.reset();
             }
         }
 
 
-        private reset(): void {
-            this.y = Math.floor(Math.random() * 480); // start island at random location
-            this.x = -this.width; // start island off stage
+        public reset(): void {
+            if (scoreboard.checkscore())// Check socre used to find the score total
+            {
+                this.x = Math.floor(Math.random() * 400); // start fuel at random location
+                this.y = -this.height; // start fuel off stage
+            }
         }
 
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
         public update(): void {
 
-           
-
-                this.x += this.dy; // moves island down the stage
+            this.y += this.dy; // moves fuel down the stage
                 this.checkBounds();
             }        
     }
